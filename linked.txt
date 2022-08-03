@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+struct node *head=NULL;
+
+void add(int el)
+{
+    struct node *newn=(struct node*)malloc(sizeof(struct node));
+    newn->data=el;
+    newn->next=head;
+    head=newn;
+
+}
+
+void pri()
+{
+    while(head!=NULL)
+    {
+        cout<<head->data<<"\n";
+        head=head->next;
+    }
+
+}
+
+int main()
+{
+    int a;
+    while(1)
+    {
+        cin>>a;
+        if(a<0) break;
+        else add(a);
+    }
+    pri();
+}
